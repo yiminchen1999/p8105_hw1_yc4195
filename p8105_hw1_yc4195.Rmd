@@ -12,15 +12,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(palmerpenguins)
-library(dplyr)
-library(explore)
 library(ggplot2)
 data("penguins", package = "palmerpenguins")
 nrow(penguins)
 ncol(penguins)
 str(penguins)
 summary(penguins)
-penguins %>% describe() #just double check
 #Write a short description of the penguins dataset (not the penguins_raw dataset) using inline R code: There are 8 variables: species, island,  bill_length_mm, bill_depth_mm , flipper_length_mm, body_mass_g, sex,year in this dataset. This dataset uses there species of penguins: Adelie,Chinstrap,Gentoo, and on three different islands: Biscoe, Dream, Torgersen from 2007 to 2009. The dataset has 344 rows and 8 columns. The mean flipper length is 200.9mm. 
 ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm ,color= species))+ geom_point()
 ggsave("myplot.pdf")
